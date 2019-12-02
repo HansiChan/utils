@@ -131,7 +131,7 @@ def watch():
                     '<td><center>%s</center></td>' \
                     '<td><font color="#FF0000"><center>%s</center><font></td>' \
                     '</tr>' % (i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7], i[8])
-    except Exception as  e:
+    except Exception as e:
         logger.info(e)
         sys.exit(1)
 
