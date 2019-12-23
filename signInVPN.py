@@ -4,6 +4,12 @@ import configparser
 
 def VPNConnect():
 
+    try:
+        con_orig = Application().connect(title=u'VPN Connect - 119.147.211.38', timeout=1)
+        con_orig.kill()
+    except:
+        pass
+
     conf = configparser.ConfigParser()
     conf.read("./conf.ini")
 
@@ -22,7 +28,7 @@ def VPNConnect():
     toolbar_button = toolbarwindow.button(u'Connect')
     toolbar_button.click()
 
-    con = Application().connect(title=u'VPN Connect - 119.147.211.38', timeout=1)
+    con = Application().connect(title=u'VPN Connect - 119.147.211.38', timeout=2)
     shrewsoftcon = con.SHREWSOFT_CON
     User = shrewsoftcon.Edit
     User.type_keys(un)

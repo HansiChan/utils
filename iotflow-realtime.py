@@ -109,7 +109,7 @@ class LLSpider(object):
 
     def get_dateList(self, dt=None):
         dtList = []
-        sDate = datetime.datetime.strptime('2019-10-08', '%Y-%m-%d').date()
+        sDate = datetime.datetime.strptime('2019-07-26', '%Y-%m-%d').date()
         eDate = datetime.date.today()
         if dt is not None:
             dtList += dt
@@ -120,7 +120,7 @@ class LLSpider(object):
                 sDate = date
         return dtList
 
-    def convert(self, arg):
+    def _convert(self, arg):
         arg = arg.replace(',', '')
         if '.' in arg:
             flow = re.findall(r'\d+\.\d+', arg)[0]
